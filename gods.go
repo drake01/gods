@@ -285,13 +285,17 @@ func updateMemUse() string {
 func main() {
 	for {
 		status := []string{
-			"",
+			"N",
 			updateNetUse(),
+			"C",
 			updateCPUUse(),
+			"M",
 			updateMemUse(),
-			updatePower(),
-			updateVolume(),
-			time.Now().Local().Format(iconDateTime + " 15:04:05"),
+			"",
+			//updatePower(),
+			//updateVolume(),
+			"",
+			time.Now().Local().Format(iconDateTime + "15:04:05"),
 		}
 		s := strings.Join(status, color[reset]+fieldSeparator)
 		exec.Command("xsetroot", "-name", s).Run()
