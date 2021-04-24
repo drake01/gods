@@ -291,7 +291,7 @@ func main() {
 			updateMemUse(),
 			updatePower(),
 			updateVolume(),
-			time.Now().Local().Format("Mon 02 " + iconDateTime + " 15:04:05"),
+			time.Now().Local().Format(iconDateTime + " 15:04:05"),
 		}
 		s := strings.Join(status, color[reset]+fieldSeparator)
 		exec.Command("xsetroot", "-name", s).Run()
