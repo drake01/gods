@@ -25,15 +25,15 @@ import (
 )
 
 const (
-	iconCPU           = "\uf35b"
-	iconDateTime      = "\uf150"
-	iconMemory        = "\uf193"
-	iconNetRX         = "\uf046"
-	iconNetTX         = "\uf05e"
-	iconPowerBattery  = "\uf080"
-	iconPowerCharging = "\uf084"
-	iconVolume        = "\uf57e"
-	iconVolumeMuted   = "\uf581"
+	iconCPU           = "C" //"\uf35b"
+	iconDateTime      = "" //"\uf150"
+	iconMemory        = "M" //"\uf193"
+	iconNetRX         = "NR" //"\uf046"
+	iconNetTX         = "NT" //"\uf05e"
+	iconPowerBattery  = "B" //"\uf080"
+	iconPowerCharging = "CH" //"\uf084"
+	iconVolume        = "V" //"\uf57e"
+	iconVolumeMuted   = "VM" //"\uf581"
 
 	fieldSeparator = " "
 )
@@ -285,16 +285,11 @@ func updateMemUse() string {
 func main() {
 	for {
 		status := []string{
-			"N",
 			updateNetUse(),
-			"C",
 			updateCPUUse(),
-			"M",
 			updateMemUse(),
-			"",
 			//updatePower(),
 			//updateVolume(),
-			"",
 			time.Now().Local().Format("15:04:05"),
 		}
 		s := strings.Join(status, color[reset]+fieldSeparator)
